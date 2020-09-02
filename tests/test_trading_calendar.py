@@ -22,10 +22,10 @@ from unittest import TestCase
 
 import numpy as np
 import pandas as pd
-from nose_parameterized import parameterized
+from parameterized import parameterized
 from pandas import read_csv
 from pandas import Timedelta
-from pandas.util.testing import assert_index_equal
+from pandas.testing import assert_index_equal
 from pytz import timezone
 from pytz import UTC
 from toolz import concat
@@ -785,7 +785,7 @@ class ExchangeCalendarTestBase(object):
             self.answers.index[-1],
         )
 
-        pd.util.testing.assert_series_equal(
+        pd.testing.assert_series_equal(
             found_opens, self.answers['market_open']
         )
 
@@ -795,7 +795,7 @@ class ExchangeCalendarTestBase(object):
             self.answers.index[-1],
         )
 
-        pd.util.testing.assert_series_equal(
+        pd.testing.assert_series_equal(
             found_closes, self.answers['market_close']
         )
 
